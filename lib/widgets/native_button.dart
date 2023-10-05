@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 /// Native Button displays the Styled Button depending upon the Platform.
 
 class NativeButton extends StatelessWidget {
-  final String title;
+  final Widget child;
   final VoidCallback? onTap;
 
-  const NativeButton({Key? key, required this.title, required this.onTap})
+  const NativeButton({Key? key, required this.child, required this.onTap})
       : super(key: key);
 
   @override
@@ -21,14 +21,11 @@ class NativeButton extends StatelessWidget {
             // color: Theme.of(context).colorScheme.primary,
             borderRadius: BorderRadius.circular(10),
             onPressed: onTap,
-            child: Text(
-              title,
-              style: Theme.of(context).textTheme.labelLarge,
-            ),
+            child: child,
           ),
         )
       : ElevatedButton(
           onPressed: onTap,
-          child: Text(title),
+          child: child,
         );
 }

@@ -173,7 +173,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   horizontal: sizeConfig.width(.04),
                 ),
                 child: NativeButton(
-                  title: "REGISTER",
+                  child: const Text("REGISTER"),
                   onTap: () {},
                 ),
               ),

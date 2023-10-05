@@ -5,8 +5,13 @@ import 'package:shimmer/shimmer.dart';
 class ImageTile extends StatelessWidget {
   final String imageUrl;
   final double size;
+  final double? borderRadius;
 
-  const ImageTile({super.key, required this.imageUrl, required this.size});
+  const ImageTile(
+      {super.key,
+      required this.imageUrl,
+      required this.size,
+      this.borderRadius});
 
   @override
   Widget build(BuildContext context) => CachedNetworkImage(
@@ -15,7 +20,7 @@ class ImageTile extends StatelessWidget {
           height: size,
           width: size,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(90),
+            borderRadius: BorderRadius.circular(borderRadius ?? 90),
             image: DecorationImage(
               image: imageProvider,
               fit: BoxFit.cover,
@@ -25,12 +30,12 @@ class ImageTile extends StatelessWidget {
         placeholder: (_, __) => ImageShimmer(
           height: size,
           width: size,
-          border: 90,
+          border: borderRadius ?? 90,
         ),
         errorWidget: (_, __, ___) => NoImageTile(
           height: size,
           width: size,
-          border: 90,
+          border: borderRadius ?? 90,
         ),
       );
 }

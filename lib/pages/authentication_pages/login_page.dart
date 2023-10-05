@@ -131,8 +131,8 @@ class _LoginPageState extends State<LoginPage> {
                   horizontal: sizeConfig.width(.04),
                 ),
                 child: NativeButton(
-                  title: "LOGIN",
                   onTap: _goToMainPage,
+                  child: const Text("LOGIN"),
                 ),
               ),
             ],

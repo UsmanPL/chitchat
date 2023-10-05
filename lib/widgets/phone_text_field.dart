@@ -39,7 +39,9 @@ class _PhoneTextFieldState extends State<PhoneTextField> with ValidatorMixin {
               onChanged: (value) {
                 final String phoneNumber =
                     "${_selectedCountry?.dialCode}$value";
-                print(phoneNumber);
+                if (kDebugMode) {
+                  print(phoneNumber);
+                }
               },
               decoration: InputDecoration(
                 labelText: "Phone",

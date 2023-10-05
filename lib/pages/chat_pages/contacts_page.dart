@@ -27,9 +27,16 @@ class ContactsPage extends StatelessWidget {
                 vertical: sizeConfig.height(.02),
                 horizontal: sizeConfig.width(.05),
               ),
-              child: const TextField(
+              child: TextField(
                 decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.search),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                    borderSide: BorderSide(
+                      width: 2,
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+                  ),
+                  prefixIcon: const Icon(Icons.search),
                   hintText: "Search chats",
                 ),
               ),

@@ -2,6 +2,8 @@ extension ExtensionOnDateTime on DateTime {
   String get toFormattedDate =>
       "$year-${month.toString().padLeft(2, "0")}-${day.toString().padLeft(2, "0")}";
 
+  String get toFormattedTime => "$hour:$minute";
+
   int get toUnixFormat => int.parse(
         DateTime.now().millisecondsSinceEpoch.toString().substring(0, 10),
       );

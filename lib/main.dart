@@ -3,9 +3,12 @@ import 'package:chitchat/pages/authentication_pages/login_page.dart';
 import 'package:chitchat/utils/size_config.dart';
 import 'package:chitchat/utils/theme/app_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() => runApp(
-      const ChitChat(),
+      const ProviderScope(
+        child: ChitChat(),
+      ),
     );
 
 class ChitChat extends StatefulWidget {
